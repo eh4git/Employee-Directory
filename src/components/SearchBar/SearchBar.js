@@ -1,7 +1,7 @@
 import React from "react"
 
 
-function SearchBar(props){
+export default function SearchBar(props){
         return (
             <div className="searchbox">
                 <form className="form-inline">
@@ -18,5 +18,3 @@ function SearchBar(props){
             </div>
         )
 }
-
-export default SearchBar;
