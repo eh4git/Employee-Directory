@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import API from "../../utils/API";
 import Table from "../Table/Table"
-
+import TableData from "../TableData/TableData"
 
 export default class Main extends Component {
     state = {
@@ -11,20 +11,36 @@ export default class Main extends Component {
         order: "decend",
         filteredUsers: []
     }
+    rowGenerate = event =>{
+        return this.state.filteredUsers.map((result) =>(
+               < TableData
+               key={result.login.uuid}
+               firstName={result.name.first}
+               lastName={result.name.last}
+               img={result.picture.medium}
+               email={result.email}
+               phone={result.phone}
+               age={result.dob.age} 
+              />
+        ));
+      }
 
     componentDidMount() {
         API.getUsers().then(results => {
             console.log("results", results);
             this.setState({
-                users: results.data.results
-            }).then(()=>{
-                this.setState({
-                    filteredUsers: this.state.users
-                })
-            }).catch((err)=>console.log(err))
-            console.log("employee data", this.state.users);
+                users: results.data.results,
+                filteredUsers: results.data.results
+            })
+            // .then(()=>{
+            //     this.setState({
+            //         filteredUsers: this.state.users
+            //     })
+            // }).catch((err)=>console.log(err))
+            // console.log("employee data", this.state.users);
         })
     }
+    
     //Sets state when change occurs
     handleInputChange = event => {
         const name = event.target.name;
@@ -43,14 +59,7 @@ export default class Main extends Component {
 
                 <div className="data-area">
                     < Table
-                        users={this.state.users}
-                        key={this.state.users.uuid}
-                        firstname={this.state.users.name.first}
-                        lastname={this.state.users.name.last}
-                        picture={this.state.users.picture.large}
-                        phone={this.state.users.phone}
-                        email={this.state.users.email}
-                        age={this.state.users.dob.age}
+                        rowGenerate= {this.rowGenerate}
                     />
                 </div>
             </div>

@@ -5,6 +5,7 @@ function SearchBar(props){
         return (
             <div className="searchbox">
                 <form className="form-inline">
+                <p>Search for Employees here</p>
                     <input
                         className="form-control"
                         type="search"
