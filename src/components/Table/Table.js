@@ -9,21 +9,21 @@ export default class Table extends Component {
   render() {
     return (
       <ul className="list-group">
-          <table className="table">
-            <thead>
-               <tr>
-              <th scope="col" onClick={()=>{this.props.handleSort("pictures")}}>Picture</th>
-              <th scope="col" onClick={()=>{this.props.handleSort("name")}}>Name</th>
-              <th scope="col" onClick={()=>{this.props.handleSort("phone")}}>Phone</th>
-              <th scope="col" onClick={()=>{this.props.handleSort("email")}}>Email</th>
-              <th scope="col" onClick={()=>{this.props.handleSort("age")}}>Age</th>
+        <table className="table table-striped">
+          <thead className="tableHead">
+            <tr>
+              <th scope="col">Picture</th>
+              <th scope="col" onClick={() => { this.props.handleSort("name") }}>Name (click to sort)</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Age</th>
             </tr>
-            </thead>
-           
+          </thead>
+
           <tbody>
             {this.props.rowGenerate()}
           </tbody>
-          </table>
+        </table>
       </ul>
     );
   }

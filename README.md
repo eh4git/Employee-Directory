@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![GitHub Badge](https://img.shields.io/badge/License-None-blue.svg)
+### Table of Contents
+* [Description](#Description)
+* [Installation](#Installation)
+* [Useage](#Useage)
+* [Licence](#Licence)
+* [Contributions](#Contributions)
+* [Tests](#Tests)
+* [Questions](#Questions)
+  * [Profile Picture](#Profile_Picture)
+  * [Github Email](#Github_Email)
+### Description
+In this application that I have created users can retreive employee information. The user can view a photo of the employee along with their name, phone number, email, and age. The user can filter the users by their names by typing in the search field, the feild will return the users who have the the letters in their name in the order that was entered. The user can also sort the users alphabetically by their first name from A-Z or Z-A by clicking the Name hedding in the table. Clicking on the users email will open their mailing application and allow them to send a message to that employee.
+### Useage
+Go to [Github Professional Profile](https://eh4git.github.io/Professional_Profile/)<br>
+### Useage
+Enter either npm start or node app into your command line terminal.
+### Licence
+This project uses the following licence(s):<br>
+None
+### Contributions
+Please feel free to contribute in any way you wish. Please read the documentation and submit a pull request. Any contributions are greatly appreciated. Feedback is also welcomed.
+### Tests
+To test the application enter the following command into your terminal:<br>
+This appication does not contain tests
+### Questions
+Please direct them to my github email.
+##### Profile_Picture
+![eh4git Github Profile Picture](https://github.com/eh4git.png?size=200)<br>
+GitHub Profile: [eh4git](http://github.com/eh4git)
+##### GitHub_Email
+ehirsch760@gmail.com

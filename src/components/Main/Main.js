@@ -11,20 +11,21 @@ export default class Main extends Component {
         order: "decend",
         filteredUsers: []
     }
+    // Input data into for employees in each row
     rowGenerate = event => {
         return this.state.filteredUsers.map((result) => (
             < TableData
                 key={result.login.uuid}
                 firstName={result.name.first}
                 lastName={result.name.last}
-                img={result.picture.medium}
+                img={result.picture.large}
                 email={result.email}
                 phone={result.phone}
                 age={result.dob.age}
             />
         ));
     }
-
+// Wait for API 
     componentDidMount() {
         API.getUsers().then(results => {
             console.log("results", results);
@@ -32,15 +33,9 @@ export default class Main extends Component {
                 users: results.data.results,
                 filteredUsers: results.data.results
             })
-            // .then(()=>{
-            //     this.setState({
-            //         filteredUsers: this.state.users
-            //     })
-            // }).catch((err)=>console.log(err))
-            // console.log("employee data", this.state.users);
         })
     }
-
+    //Sort First Name alphabetically
     handleSort = (event) => {
         //check and update state
         if (this.state.order === "descend") {
@@ -68,11 +63,11 @@ export default class Main extends Component {
                 else if (event === "email") {
                     return a[event].email.localeCompare(b[event].first);
                 }
-                     else {
+                else {
                     return a[event] - b[event];
                 }
 
-                
+
             } else {
                 // account for missing values
                 if (a[event] === undefined) {
@@ -99,11 +94,6 @@ export default class Main extends Component {
 
     //Sets state when change occurs
     handleInputChange = event => {
-        // const name = event.target.name;
-        // const value = event.target.value;
-        // this.setState({
-        //     [name]: value
-        // });
         console.log(event.target.value);
         const filter = event.target.value;
         const filteredList = this.state.users.filter(item => {
