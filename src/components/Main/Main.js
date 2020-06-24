@@ -46,13 +46,13 @@ export default class Main extends Component {
         if (this.state.order === "descend") {
             this.setState({
                 order: "ascend"
-            })
+            });
         } else {
             this.setState({
                 order: "descend"
-            })
+            });
         }
-
+        console.log(this.state.order)
         const compareFnc = (a, b) => {
             if (this.state.order === "ascend") {
                 // account for missing values
@@ -64,9 +64,15 @@ export default class Main extends Component {
                 // numerically
                 else if (event === "name") {
                     return a[event].first.localeCompare(b[event].first);
-                } else {
+                }
+                else if (event === "email") {
+                    return a[event].email.localeCompare(b[event].first);
+                }
+                     else {
                     return a[event] - b[event];
                 }
+
+                
             } else {
                 // account for missing values
                 if (a[event] === undefined) {
@@ -77,6 +83,9 @@ export default class Main extends Component {
                 // numerically
                 else if (event === "name") {
                     return b[event].first.localeCompare(a[event].first);
+                }
+                else if (event === "email") {
+                    return b[event].email.localeCompare(a[event].first);
                 } else {
                     return b[event] - a[event];
                 }
@@ -99,9 +108,7 @@ export default class Main extends Component {
         const filter = event.target.value;
         const filteredList = this.state.users.filter(item => {
             // merge data together then see if user input is anywhere inside
-            let values = Object.values(item)
-                .join("")
-                .toLowerCase();
+            let values = Object.values(item).join("").toLowerCase();
             return values.indexOf(filter.toLowerCase()) !== -1;
         });
         this.setState({ filteredUsers: filteredList });
@@ -109,9 +116,9 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-                <SearchBar search={this.state.search} handleInputChange={this.handleInputChange} />
+                <SearchBar search={this.state.search} handleSort={this.handleSort} handleInputChange={this.handleInputChange} />
                 <div className="data-area">
-                    < Table rowGenerate={this.rowGenerate} />
+                    < Table handleSort={this.handleSort} rowGenerate={this.rowGenerate} />
                 </div>
             </div>
         )
